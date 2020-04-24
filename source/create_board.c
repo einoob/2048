@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:51:23 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/23 22:21:36 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/24 14:44:15 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	int_arr_to_char(t_info *info, int y, int slot)
 	else
 		x = slot == 14 ? 2 : 3;
 	nbr = info->grid[y][x];
-//	ft_printf("grid nbr in [%d %d] = %d\n", y, x, info->grid[y][x]);
 	info->board[y][20] = '\n';
 	info->board[y][slot] = '|';
 	slot--;
@@ -43,11 +42,11 @@ int		grid_to_string(t_info *info)
 	int y;
 
 	y = 0;
-	if (!(info->board = (char**)malloc(sizeof(char*) * 8)))
+	if (!(info->board = (char**)malloc(sizeof(char*) * 5)))
 		return (0);
 	while (y < 4) 
 	{
-		info->board[y] = ft_strnew(22);
+		info->board[y] = ft_strnew(21);
 		y++;
 	}
 	info->board[y] = NULL;
@@ -108,16 +107,6 @@ int		create_board(t_info *info)
 	place_nbr(info, nb1, 0, 0);
 	place_nbr(info, nb2, 0, 0);
 	grid_to_string(info);
-	int i = 0;
-	ft_putstr("GRID\n");
-	ft_putstr("---------------------\n");
-	while (i < 4)
-	{
-		ft_putchar('|');
-		ft_putstr(info->board[i]);
-		ft_putstr("---------------------\n");
-		i++;
-	}
-	ft_printf("GRID\n");
+	print_board(info, 0);
 	return (1);
 }
