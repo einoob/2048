@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:51:23 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/24 14:44:15 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/26 19:08:49 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,41 +71,54 @@ int		new_number_value(void)
 	return (nbr);
 }
 
-int		place_nbr(t_info *info, int nbr, int x, int y)
+int		zero_count(t_info *info, int x, int y)
 {
 	int		count;
 
 	count = 0;
-	info->loc_x = arc4random_uniform(4);
-	info->loc_y = arc4random_uniform(4);
-	x = info->loc_x;
-	y = info->loc_y;
-	while (count < 16)
+	while (y < 4)
 	{
-		while (info->grid[y][x] != 0 && x < 4)
+		while (x < 4)
+		{
+			if (info->grid[y][x] == 0)
+				count++;
+			x++;
+		}
+		x = 0;
+		y++;
+	}
+	return (count);
+}
+
+void		place_nbr(t_info *info, int nbr, int y, int x)
+{
+
+	int		emptys;
+	int		count;
+
+	emptys = zero_count(info, 0, 0);
+	count = arc4random_uniform(emptys);
+	while (count != -1 && y < 3)
+	{
+		x = -1;
+		y++;
+		while (count != -1 && x < 3)
 		{
 			x++;
-			count++;	
+			if (info->grid[y][x] == 0)
+				count--;
 		}
-		if (info->grid[y][x] == 0)
-			break ;
-		y = y == 3 ? 0 : y + 1;
-		x = 0;
 	}
-	if (count != 16)
-		info->grid[y][x] = nbr;
-	return (count != 16);
+	info->grid[y][x] = nbr;
 }
 
 int		create_board(t_info *info)
 {
 	int		nb1;
-	int		nb2;
 
 	nb1 = new_number_value();
-	nb2 = 2;
-	place_nbr(info, nb1, 0, 0);
-	place_nbr(info, nb2, 0, 0);
+	place_nbr(info, nb1, -1, -1);
+	place_nbr(info, 2, -1, -1);
 	grid_to_string(info);
 	print_board(info, 0);
 	return (1);

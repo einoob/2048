@@ -6,13 +6,33 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:44:37 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/24 16:34:38 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/26 19:21:49 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/twotoeleven.h"
 
-void	initialize_info(t_info *info)
+int		grid_lock(t_info *info, int y, int x)
+{
+	while (y < 4)
+	{
+		while (x < 4)
+		{
+			if (info->grid[y][x] == 0)
+				return (0);
+			if (x < 3 && info->grid[y][x] == info->grid[y][x + 1])
+				return (0);
+			if (y < 3 && info->grid[y][x] == info->grid[y + 1][x])
+				return (0);
+			x++;
+		}
+		x = 0;
+		y++;
+	}
+	return (1);
+}
+
+void	initialize_info(t_info *info, int y, int x)
 {
 	info->newnbr = 0;
 	info->score = 0;
@@ -20,6 +40,16 @@ void	initialize_info(t_info *info)
 	info->loc_y = 0;
 	info->full = 0;
 	info->moves = 0;
+	while (y < 4)
+	{
+		while (x < 4)
+		{
+			info->grid[y][x] = 0;
+			x++;
+		}
+		x = 0;
+		y++;
+	}
 }
 
 void	print_board(t_info *info, int y)
@@ -33,12 +63,20 @@ void	print_board(t_info *info, int y)
 		ft_putstr("---------------------\n");
 		y++;
 	}
+	if (grid_lock(info, 0, 0))
+	{
+		ft_putendl("======GAME OVER======");
+		ft_printf("Your score: %d\n", info->score);
+		info->full = 1;
+		return ;
+	}
 	ft_putendl("Use w-a-s-d + enter to merge numbers.");
 	while (y > -1)
 	{
 		ft_strdel(&(info->board[y]));
 		y--;
 	}
+	free(info->board);
 }
 
 int		main(void) {
@@ -51,20 +89,11 @@ int		main(void) {
 	x = 0;
 	if (!(info = (t_info*)malloc(sizeof(t_info))))
 		return (-1);
-	while (y < 4)
-	{
-		while (x < 4)
-		{
-			info->grid[y][x] = 0;
-			x++;
-		}
-		x = 0;
-		y++;
-	}
-	initialize_info(info);
+	initialize_info(info, 0, 0);
 	create_board(info);
 	while (!info->full)
 	{
 		play_game(info);
 	}
+	return (0);
 }

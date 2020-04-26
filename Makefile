@@ -6,11 +6,11 @@
 #    By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/23 17:31:10 by elindber          #+#    #+#              #
-#    Updated: 2020/04/24 14:12:52 by elindber         ###   ########.fr        #
+#    Updated: 2020/04/26 18:29:00 by elindber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 2048
+NAME = 2048-game
 
 SRC = source/*.c
 

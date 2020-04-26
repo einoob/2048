@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:40:38 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/24 16:34:26 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/26 19:09:15 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ typedef struct	s_info
 int				create_board(t_info *info);
 int				new_number_value(void);
 int				grid_to_string(t_info *info);
-int				place_nbr(t_info *info, int nbr, int x, int y);
+int				merge_grid(t_info *info, char button);
+void			place_nbr(t_info *info, int nbr, int y, int x);
+void			move_empty(t_info *info, int dir, int y, int x);
 void			play_game(t_info *info);
 void			print_board(t_info *info, int y);
 
