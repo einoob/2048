@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:44:37 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/26 19:21:49 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/26 19:56:04 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,18 @@ void	initialize_info(t_info *info, int y, int x)
 void	print_board(t_info *info, int y)
 {
 	ft_printf("\nScore: %d\n", info->score);
-	ft_putstr("---------------------\n");
+	ft_putendl("---------------------");
 	while (y < 4)
 	{
 		ft_putchar('|');
 		ft_putstr(info->board[y]);
-		ft_putstr("---------------------\n");
+		ft_putendl("---------------------");
 		y++;
 	}
 	if (grid_lock(info, 0, 0))
 	{
 		ft_putendl("======GAME OVER======");
-		ft_printf("Your score: %d\n", info->score);
+		ft_printf("Your score:\t%d\n", info->score);
 		info->full = 1;
 		return ;
 	}
@@ -79,8 +79,8 @@ void	print_board(t_info *info, int y)
 	free(info->board);
 }
 
-int		main(void) {
-
+int		main(void)
+{
 	t_info	*info;
 	int		y;
 	int		x;

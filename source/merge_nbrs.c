@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/26 18:33:17 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/26 18:34:12 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/26 19:48:10 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int			merge_right(t_info *info, int y, int x)
 	}
 	y = 0;
 	move_empty(info, 1, y, x);
-	return (info->moves != 0);	
+	return (info->moves != 0);
 }
 
 int			merge_left(t_info *info, int y, int x)

@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:51:23 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/26 19:08:49 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/26 19:51:34 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,13 @@ void	int_arr_to_char(t_info *info, int y, int slot)
 	info->board[y][20] = '\n';
 	info->board[y][slot] = '|';
 	slot--;
-	while (count > 0) 
-	{	
+	while (count > 0)
+	{
 		info->board[y][slot] = nbr == 0 ? ' ' : nbr % 10 + '0';
 		nbr /= 10;
 		slot--;
 		count--;
 	}
-
 }
 
 int		grid_to_string(t_info *info)
@@ -44,14 +43,14 @@ int		grid_to_string(t_info *info)
 	y = 0;
 	if (!(info->board = (char**)malloc(sizeof(char*) * 5)))
 		return (0);
-	while (y < 4) 
+	while (y < 4)
 	{
 		info->board[y] = ft_strnew(21);
 		y++;
 	}
 	info->board[y] = NULL;
 	y = 0;
-	while (y < 4) 
+	while (y < 4)
 	{
 		int_arr_to_char(info, y, 4);
 		int_arr_to_char(info, y, 9);
@@ -90,9 +89,8 @@ int		zero_count(t_info *info, int x, int y)
 	return (count);
 }
 
-void		place_nbr(t_info *info, int nbr, int y, int x)
+void	place_nbr(t_info *info, int nbr, int y, int x)
 {
-
 	int		emptys;
 	int		count;
 
