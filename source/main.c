@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:44:37 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/29 16:25:15 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/29 17:26:13 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ int		main(void)
 	initialize_info(info, 0, 0);
 	create_board(info);
 	while (!info->full)
-	{
 		play_game(info);
-	}
 	return (0);
 }
