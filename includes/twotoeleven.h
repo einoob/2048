@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:40:38 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/26 19:09:15 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/29 16:25:07 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ typedef struct	s_info
 	int			newnbr;
 	char		**board;
 	int			score;
-	int			loc_x;
-	int			loc_y;
 	int			full;
 	int			moves;
 }				t_info;

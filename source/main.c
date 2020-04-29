@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:44:37 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/26 19:56:04 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/29 16:25:15 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	initialize_info(t_info *info, int y, int x)
 {
 	info->newnbr = 0;
 	info->score = 0;
-	info->loc_x = 0;
-	info->loc_y = 0;
 	info->full = 0;
 	info->moves = 0;
 	while (y < 4)
