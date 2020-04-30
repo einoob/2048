@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:44:37 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/29 17:26:13 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/30 14:29:04 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,7 @@ void	print_board(t_info *info, int y)
 int		main(void)
 {
 	t_info	*info;
-	int		y;
-	int		x;
 
-	y = 0;
-	x = 0;
 	if (!(info = (t_info*)malloc(sizeof(t_info))))
 		return (-1);
 	initialize_info(info, 0, 0);
