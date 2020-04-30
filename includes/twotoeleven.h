@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:40:38 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/29 16:25:07 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/30 13:56:19 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <math.h>
 # include <stdlib.h>
+# include <stdint.h>
 # include "../libftprintf/includes/ft_printf.h"
 # include "../libftprintf/includes/get_next_line.h"
 # include "../libftprintf/libft/libft.h"

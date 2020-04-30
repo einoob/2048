@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elindber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 09:47:30 by elindber          #+#    #+#             */
-/*   Updated: 2019/11/12 19:42:23 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/30 14:03:14 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,11 @@ static int		ft_iswhtspc(int c)
 char			*ft_strtrim(char const *s)
 {
 	int		i;
-	int		t;
 	int		end;
 	char	*trim;
 
 	if (!s)
 		return (NULL);
-	t = 0;
 	i = (int)(ft_strlen(s) - 1);
 	while (ft_iswhtspc(s[i]))
 		i--;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   imaxtoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elindber <elindber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 13:25:38 by elindber          #+#    #+#             */
-/*   Updated: 2020/01/28 11:02:28 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/30 14:05:12 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ intmax_t		unsigned_base_nbrcount(uintmax_t n, size_t base)
 	i = 0;
 	if (n == 0)
 		return (1);
-	if (n < 0)
-	{
-		n = n * -1;
-		i++;
-	}
 	while (n > 0)
 	{
 		i++;

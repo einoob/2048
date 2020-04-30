@@ -6,7 +6,7 @@
 /*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:51:23 by elindber          #+#    #+#             */
-/*   Updated: 2020/04/26 19:51:34 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/30 14:21:12 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int		new_number_value(void)
 {
 	int		nbr;
 
-	nbr = arc4random_uniform(5);
+	nbr = rand() % 5;
 	nbr = nbr == 4 ? 4 : 2;
 	return (nbr);
 }
@@ -95,7 +95,7 @@ void	place_nbr(t_info *info, int nbr, int y, int x)
 	int		count;
 
 	emptys = zero_count(info, 0, 0);
-	count = arc4random_uniform(emptys);
+	count = rand() % emptys;
 	while (count != -1 && y < 3)
 	{
 		x = -1;
