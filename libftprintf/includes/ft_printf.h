@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elindber <elindber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elindber <elindber@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 14:00:48 by elindber          #+#    #+#             */
-/*   Updated: 2020/02/17 17:16:42 by elindber         ###   ########.fr       */
+/*   Updated: 2020/04/30 14:35:34 by elindber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include <stdlib.h>
+# include <stdint.h>
 # include <unistd.h>
 # include <limits.h>
 # include <stdio.h>
